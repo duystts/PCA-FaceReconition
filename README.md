@@ -1,4 +1,4 @@
-# Ứng dụng PCA trong Nhận diện Khuôn mặt
+# PCA-FaceReconition# Ứng dụng PCA trong Nhận diện Khuôn mặt
 
 ## Tổng quan dự án
 
