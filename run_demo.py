@@ -95,7 +95,6 @@ def run_streamlit_demo():
 def main():
     """Hàm main"""
     print("🎓 Demo Đồ Án: Ứng dụng PCA trong Nhận diện Khuôn mặt")
-    print("Sinh viên có thể sử dụng script này để chạy demo nhanh")
     print("=" * 60)
     
     # Thiết lập demo

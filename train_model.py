@@ -154,8 +154,9 @@ def main():
         return
     
     try:
-        # Khởi tạo và train model
-        model = FaceRecognitionPCA(n_components=10, target_size=(100, 100))
+        # Khởi tạo và train model với face detection
+        print("🎯 Sử dụng Face Detection để cắt khuôn mặt...")
+        model = FaceRecognitionPCA(n_components=15, target_size=(100, 100))
         model.train(data_folder)
         
         # Lưu model
@@ -164,7 +165,8 @@ def main():
         # Hiển thị eigenfaces
         model.visualize_eigenfaces()
         
-        print("\nTraining hoàn thành!")
+        print("\n✅ Training hoàn thành với Face Detection!")
+        print("Model đã được cải tiến để tập trung vào khuôn mặt, giảm ảnh hưởng của background")
         print("Bạn có thể chạy demo bằng lệnh: streamlit run app_demo.py")
         
     except Exception as e:

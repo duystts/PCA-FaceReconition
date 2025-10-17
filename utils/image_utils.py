@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import os
 from PIL import Image
+from .face_preprocessing import preprocess_face_image
 
 def load_images_from_folder(folder_path, target_size=(100, 100)):
     """
@@ -35,12 +36,10 @@ def load_images_from_folder(folder_path, target_size=(100, 100)):
             if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
                 img_path = os.path.join(person_path, filename)
                 
-                # Đọc và xử lý ảnh
-                img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
-                if img is not None:
-                    # Resize về kích thước chuẩn
-                    img_resized = cv2.resize(img, target_size)
-                    images.append(img_resized)
+                # Sử dụng face detection để cắt khuôn mặt
+                face_img = preprocess_face_image(img_path, target_size)
+                if face_img is not None:
+                    images.append(face_img)
                     labels.append(current_label)
         
         current_label += 1

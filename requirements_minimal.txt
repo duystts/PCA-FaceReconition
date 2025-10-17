@@ -1,9 +1,0 @@
-numpy
-scikit-learn
-opencv-python
-matplotlib
-streamlit
-joblib
-Pillow
-plotly
-pandas
